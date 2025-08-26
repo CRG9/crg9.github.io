@@ -284,13 +284,13 @@ html {
   display: none;
 }
 
-@media (max-width: 769px) {
+@media only screen and (max-width: 769px) {
   .move-button {
     display: flex;
   }
 }
 
-@media (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
   .timeline-container {
     flex-direction: column; /* Stack modules vertically */
     justify-content: flex-start; /* Align items to the top */
