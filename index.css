@@ -1,298 +1,237 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .page-header {
-    display: flex;
-    justify-content: center;
-    color:blue;
-    margin: 1rem;
+  display: flex;
+  justify-content: center;
+  color: blue;
+  margin: 1rem;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: minmax(30rem, 5fr) minmax(10rem, 1fr);
+  grid-template-columns: 5fr 1fr;
   grid-auto-flow: row;
   border: red solid 1px;
+  margin: 0 auto; /*Horizontally centers the container in the parent*/
   gap: 1rem;
-  padding: 1rem; /* Padding creates space INSIDE the container */
-  /* The width will now be 100% by default, which is what we want */
+  padding: 1rem;
+  margin: 1rem;
+  min-height: 40rem;
 }
 
 .main-content {
-    border: blue 1px solid;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  border: blue 1px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .main-content h2 {
-    margin: 0.5rem;
+  margin: 0.5rem;
 }
 
 .timeline-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    border: orange 1px solid;
-    min-height: 20rem;
-    max-height: 20rem;
-    width: 95%;
-    padding: 2rem;
-    overflow-x: scroll;
-    scrollbar-gutter: stable;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: orange 1px solid;
+  min-height: 20rem;
+  max-height: 20rem;
+  max-width: 50rem;
+  width: 100%;
+  padding: 2rem;
+  overflow-x: scroll;
+  scrollbar-gutter: stable;
 }
 
 .selected-module-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    border: red solid 1px;
-    min-height: 15rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: red solid 1px;
+  min-height: 15rem;
 }
 
 .selected-module {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    min-width: 15rem;
-    height: 70%;
-    min-height: 10rem;
-    max-height: 10rem;
-    border: rgb(160, 160, 190) solid 3px;
-    border-radius: 25px;
-    background-color: hsla(205, 15%, 84%, 0.5);
-    margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  min-width: 15rem;
+  height: 70%;
+  min-height: 10rem;
+  border: rgb(160, 160, 190) solid 3px;
+  border-radius: 25px;
+  background-color: hsla(205, 15%, 84%, 0.5);
+  margin: 0.5rem;
 }
 
-.selected-module h3, .selected-module h4, .selected-module h5 {
-    margin: 0.25rem;
+.selected-module h3,
+.selected-module h4,
+.selected-module h5 {
+  margin: 0.25rem;
 }
 
 .functions-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 8rem;
-    border: green 1px solid;
-    min-height: 15rem;
-    padding: 1rem;
-    margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: green 1px solid;
+  min-height: 15rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .edit-module {
-    display: flex;
-    min-width: 5rem;
-    border: orange 1px solid;
-    height: 5rem;
-    margin: 1rem;
-    padding: 1rem;
-    cursor: pointer;
+  display: flex;
+  min-width: 5rem;
+  border: orange 1px solid;
+  height: 5rem;
+  margin: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .delete-module {
-    display: flex;
-    min-width: 5rem;
-    border: red 1px solid;
-    height: 5rem;
-    margin: 1rem;
-    padding: 1rem;
-    cursor: pointer;
+  display: flex;
+  min-width: 5rem;
+  border: red 1px solid;
+  height: 5rem;
+  margin: 1rem;
+  padding: 1rem;
+  cursor: pointer;
 }
 
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    border: green 1px solid;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: green 1px solid;
+  margin: 0 auto;
 }
 
 /*---------*/
 
 .module-adder {
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    min-width: 15rem;
-    height: 70%;
-    min-height: 10rem;
-    max-height: 10rem;
-    border: rgb(160, 160, 190) solid 3px;
-    border-radius: 25px;
-    background-color: hsla(205, 15%, 84%, 0.5);
-    margin: 0.5rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 15rem;
+  height: 70%;
+  min-height: 10rem;
+  max-height: 10rem;
+  border: rgb(160, 160, 190) solid 3px;
+  border-radius: 25px;
+  background-color: hsla(205, 15%, 84%, 0.5);
+  margin: 0.5rem;
 }
 
 .module-adder:hover {
-    border: rgb(62, 62, 98) solid 3px;
+  border: rgb(62, 62, 98) solid 3px;
 }
 
 .plus {
-    color:aliceblue;
-    font-size: 10rem;
-    line-height: 5rem;
-    margin: 0.5rem;
+  color: aliceblue;
+  font-size: 10rem;
+  line-height: 5rem;
+  margin: 0.5rem;
 }
 
 .add-module-instruction {
-    font-size: 1rem;
-    color:rgb(45, 45, 93);
-    margin: 0.5rem;
+  font-size: 1rem;
+  color: rgb(45, 45, 93);
+  margin: 0.5rem;
 }
 
 .module {
-    display: flex;
-    cursor: pointer;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    min-width: 15rem;
-    height: 70%;
-    min-height: 10rem;
-    max-height: 10rem;
-    border: rgb(42, 42, 85) solid 3px;
-    border-radius: 25px;
-    background-color: hsla(205, 76%, 67%, 0.5);
-    margin: 0.5rem;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 15rem;
+  max-width: 20rem;
+  min-height: 15rem;
+  border: rgb(42, 42, 85) solid 3px;
+  border-radius: 25px;
+  background-color: hsla(205, 76%, 67%, 0.5);
+  margin: 0.5rem;
+}
+
+.selected-module {
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 15rem;
+  max-width: 20rem;
+  min-height: 15rem;
+  margin: 0.5rem;
+  border: blue 1px solid;
+}
+
+.module h3,
+.module h4,
+.module h5,
+.selected-module h3,
+.selected-module h4,
+.selected-module h5 {
+  overflow-wrap: break-word; /* This forces long words to wrap */
+  word-wrap: break-word; /* Legacy fallback for older browsers */
+  width: 100%; /* Ensures text respects container padding */
+  padding: 0 0.5rem; /* Adds a little horizontal space */
 }
 
 .module:hover {
-    border: rgb(145, 145, 172) solid 3px;
+  border: rgb(145, 145, 172) solid 3px;
 }
 
 .module.selected {
-    border: rgb(137, 238, 109) solid 3px;
+  border: rgb(137, 238, 109) solid 3px;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .module-adder input {
-    margin: 0.25rem;
+  margin: 0.25rem;
 }
 
 .module-adder form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*---------*/
 
 .reset-timeline {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: red 1px solid;
-    min-height: 5rem;
-    padding: 1rem;
-    margin: 1rem;
-    text-align: center;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .grid-container {
-    grid-template-columns: 1fr; /* Sets a single-column layout on small screens */
-  }
-
-  .functions-wrapper {
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .timeline-container {
-    flex-direction: column;      /* Stack modules vertically */
-    justify-content: flex-start; /* CRITICAL: Align items to the top */
-    align-items: center;         /* Center them horizontally */
-    
-    /* SET a fixed maximum height to create a scrollable window */
-    max-height: 30rem;           /* You can adjust this value */
-    
-    overflow-x: hidden;          /* Turn off horizontal scroll */
-    overflow-y: auto;            /* Show vertical scrollbar only when needed */
-    padding: 1rem;
-  }
-
-  .main-content,
-  .sidebar {
-    /* Optional: Ensure both sections take full width if needed */
-    width: 100%;
-  }
-
-  .selected-module-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-}
-
-
-@media (max-width: 1000px) {
-
-.selected-module-container {
-    display: flex;
-    justify-content: center;
-    width: 95%;
-    border: red solid 1px;
-    min-height: 15rem;
-}
-
-.selected-module {
-    display: flex;
-    min-height: 15rem;
-    min-width: 15rem;
-    width: 30%;
-    padding: 1rem;
-    margin: 1rem;
-    border: blue 1px solid;
-}
-
-.functions-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 5rem;
-    border: green 1px solid;
-    min-height: 15rem;
-    padding: 1rem;
-    margin: 1rem;    
-}
-
-.edit-module {
-    display: flex;
-    min-width: 4rem;
-    height: 4rem;
-    border: orange 1px solid;
-    margin: 0.5rem;
-}
-
-.delete-module {
-    display: flex;
-    min-width: 4rem;
-    height: 4rem;
-    border: red 1px solid;
-    margin: 0.5rem;
-}
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: red 1px solid;
+  min-height: 5rem;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  cursor: pointer;
 }
 
 .modal-overlay {
@@ -342,20 +281,73 @@ html {
 }
 
 .move-button {
-  display: none; /* Hidden by default */
-  width: 4rem;
-  height: 4rem;
-  border: #ccc solid 2px;
-  border-radius: 50%; /* Make them circles */
-  margin: 0.5rem;
-  cursor: pointer;
-  
-  /* Centering the arrow inside */
-  justify-content: center;
-  align-items: center;
-  font-size: 1.5rem; /* Makes the emoji arrow bigger */
+  display: none;
 }
 
-.move-button:hover {
-  background-color: #f0f0f0;
+@media (max-width: 769px) {
+  .move-button {
+    display: flex;
+  }
+}
+
+@media (max-width: 1000px) {
+  .timeline-container {
+    flex-direction: column; /* Stack modules vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center them horizontally */
+
+    /* SET a fixed maximum height to create a scrollable window */
+    max-height: 30rem; /* You can adjust this value */
+    max-width: 45rem;
+    overflow-x: hidden; /* Turn off horizontal scroll */
+    overflow-y: auto; /* Show vertical scrollbar only when needed */
+    padding: 1rem;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr; /* Sets a single-column layout on small screens */
+  }
+
+  .selected-module-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    border: red solid 1px;
+    min-height: 15rem;
+  }
+
+  .selected-module {
+    display: flex;
+    min-height: 15rem;
+    min-width: 10rem;
+    padding: 1rem;
+    margin: 1rem;
+    border: blue 1px solid;
+  }
+
+  .functions-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: green 1px solid;
+    min-height: 15rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .edit-module {
+    display: flex;
+    max-height: 5rem;
+    border: orange 1px solid;
+    margin: 0.5rem;
+  }
+
+  .delete-module {
+    display: flex;
+    max-height: 5rem;
+    border: red 1px solid;
+    margin: 0.5rem;
+  }
 }
