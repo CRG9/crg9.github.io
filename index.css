@@ -207,6 +207,10 @@ html {
   background-color: #ccc;
 }
 
+.arrow-buttons-instruction {
+    display: none;
+}
+
 
 /* --- Desktop & Tablet Styles --- */
 /* This media query applies changes ONLY on screens wider than 768px */
@@ -240,6 +244,10 @@ html {
   }
 
   .move-button {
-    display: none !important; /* Hide arrow buttons on desktop */
+    display: none; /* Hide arrow buttons on desktop */
+  }
+
+  .arrow-buttons-instruction {
+    display: flex;
   }
 }
