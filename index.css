@@ -1,3 +1,4 @@
+/* --- Global & Mobile-First Default Styles --- */
 * {
   padding: 0;
   margin: 0;
@@ -8,30 +9,30 @@ html {
   font-size: 16px;
 }
 
+.hidden {
+  display: none;
+}
+
 .page-header {
   display: flex;
   justify-content: center;
   color: blue;
   margin: 1rem;
+  text-align: center;
 }
 
+/* Default to a single column for mobile */
 .grid-container {
   display: grid;
-  grid-template-columns: 5fr 1fr;
-  grid-auto-flow: row;
-  border: red solid 1px;
-  margin: 0 auto; /*Horizontally centers the container in the parent*/
+  grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
-  margin: 1rem;
-  min-height: 40rem;
 }
 
 .main-content {
   border: blue 1px solid;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -40,202 +41,126 @@ html {
   margin: 0.5rem;
 }
 
+/* Mobile: Vertical, scrolling timeline */
 .timeline-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   border: orange 1px solid;
-  min-height: 20rem;
-  max-height: 20rem;
-  max-width: 50rem;
   width: 100%;
-  padding: 2rem;
-  overflow-x: scroll;
-  scrollbar-gutter: stable;
+  padding: 1rem;
+  max-height: 30rem;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
+/* Mobile: Vertically stacked selected module */
 .selected-module-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   border: red solid 1px;
-  min-height: 15rem;
+  padding: 1rem 0;
 }
 
+.module,
+.module-adder,
 .selected-module {
   display: flex;
   flex-direction: column;
-  align-content: center;
   justify-content: center;
-  min-width: 15rem;
-  height: 70%;
-  min-height: 10rem;
-  border: rgb(160, 160, 190) solid 3px;
-  border-radius: 25px;
-  background-color: hsla(205, 15%, 84%, 0.5);
+  align-items: center;
+  cursor: pointer;
+  width: 90%;
+  max-width: 20rem; /* Prevents modules from becoming too wide */
   margin: 0.5rem;
+  border-radius: 25px;
+  border: rgb(160, 160, 190) solid 3px;
+  background-color: hsla(205, 15%, 84%, 0.5);
+  padding: 1rem 0; /* Add vertical padding */
 }
 
-.selected-module h3,
-.selected-module h4,
-.selected-module h5 {
-  margin: 0.25rem;
+.module {
+  background-color: hsla(205, 76%, 67%, 0.5);
+  border-color: rgb(42, 42, 85);
+}
+
+.module h3, .module h4, .module h5,
+.selected-module h3, .selected-module h4, .selected-module h5 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 100%;
+  padding: 0 0.5rem;
+  margin: 0.25rem 0; /* Add a little vertical margin between text lines */
+}
+
+.module.selected {
+  border-color: rgb(137, 238, 109);
 }
 
 .functions-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Buttons in a row on mobile */
   align-items: center;
   justify-content: center;
-  border: green 1px solid;
-  min-height: 15rem;
-  padding: 1rem;
-  margin: 1rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
-.edit-module {
-  display: flex;
-  min-width: 5rem;
-  border: orange 1px solid;
-  height: 5rem;
-  margin: 1rem;
-  padding: 1rem;
-  cursor: pointer;
-}
-
+.edit-module,
 .delete-module {
   display: flex;
-  min-width: 5rem;
-  border: red 1px solid;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
   height: 5rem;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 0 0.5rem;
   cursor: pointer;
+  padding: 0.5rem; /* Add some padding */
+}
+
+/* This new rule fixes the icon sizing */
+.edit-module img,
+.delete-module img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the image scales correctly without distortion */
+}
+
+.move-button {
+  display: flex; /* Shown by default on mobile */
+  width: 4rem;
+  height: 4rem;
+  border: #ccc solid 2px;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
   border: green 1px solid;
-  margin: 0 auto;
 }
-
-/*---------*/
-
-.module-adder {
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-width: 15rem;
-  height: 70%;
-  min-height: 10rem;
-  max-height: 10rem;
-  border: rgb(160, 160, 190) solid 3px;
-  border-radius: 25px;
-  background-color: hsla(205, 15%, 84%, 0.5);
-  margin: 0.5rem;
-}
-
-.module-adder:hover {
-  border: rgb(62, 62, 98) solid 3px;
-}
-
-.plus {
-  color: aliceblue;
-  font-size: 10rem;
-  line-height: 5rem;
-  margin: 0.5rem;
-}
-
-.add-module-instruction {
-  font-size: 1rem;
-  color: rgb(45, 45, 93);
-  margin: 0.5rem;
-}
-
-.module {
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-width: 15rem;
-  max-width: 20rem;
-  min-height: 15rem;
-  border: rgb(42, 42, 85) solid 3px;
-  border-radius: 25px;
-  background-color: hsla(205, 76%, 67%, 0.5);
-  margin: 0.5rem;
-}
-
-.selected-module {
-  display: flex;
-  cursor: pointer;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  min-width: 15rem;
-  max-width: 20rem;
-  min-height: 15rem;
-  margin: 0.5rem;
-  border: blue 1px solid;
-}
-
-.module h3,
-.module h4,
-.module h5,
-.selected-module h3,
-.selected-module h4,
-.selected-module h5 {
-  overflow-wrap: break-word; /* This forces long words to wrap */
-  word-wrap: break-word; /* Legacy fallback for older browsers */
-  width: 100%; /* Ensures text respects container padding */
-  padding: 0 0.5rem; /* Adds a little horizontal space */
-}
-
-.module:hover {
-  border: rgb(145, 145, 172) solid 3px;
-}
-
-.module.selected {
-  border: rgb(137, 238, 109) solid 3px;
-}
-
-.hidden {
-  display: none;
-}
-
-.module-adder input {
-  margin: 0.25rem;
-}
-
-.module-adder form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/*---------*/
 
 .reset-timeline {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   border: red 1px solid;
   min-height: 5rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: 1rem 0;
   text-align: center;
   cursor: pointer;
 }
 
+/* --- Modal Styles --- */
 .modal-overlay {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -280,74 +205,36 @@ html {
   background-color: #ccc;
 }
 
-.move-button {
-  display: none;
-}
 
-@media only screen and (max-width: 769px) {
-  .move-button {
-    display: flex;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  .timeline-container {
-    flex-direction: column; /* Stack modules vertically */
-    justify-content: flex-start; /* Align items to the top */
-    align-items: center; /* Center them horizontally */
-
-    /* SET a fixed maximum height to create a scrollable window */
-    max-height: 30rem; /* You can adjust this value */
-    max-width: 45rem;
-    overflow-x: hidden; /* Turn off horizontal scroll */
-    overflow-y: auto; /* Show vertical scrollbar only when needed */
-    padding: 1rem;
-  }
-
+/* --- Desktop & Tablet Styles --- */
+/* This media query applies changes ONLY on screens wider than 768px */
+@media (min-width: 769px) {
   .grid-container {
-    grid-template-columns: 1fr; /* Sets a single-column layout on small screens */
+    /* Switch to two columns on desktop */
+    grid-template-columns: 5fr 1fr;
+  }
+
+  .timeline-container {
+    flex-direction: row; /* Go back to horizontal */
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 20rem;
+    max-height: 20rem;
+    max-width: 50rem;
   }
 
   .selected-module-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    border: red solid 1px;
-    min-height: 15rem;
-  }
-
-  .selected-module {
-    display: flex;
-    min-height: 15rem;
-    min-width: 10rem;
-    padding: 1rem;
-    margin: 1rem;
-    border: blue 1px solid;
+    flex-direction: row; /* Side-by-side on desktop */
   }
 
   .functions-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border: green 1px solid;
-    min-height: 15rem;
-    padding: 1rem;
-    margin: 1rem;
+    flex-direction: column; /* Stack buttons vertically on desktop */
+    margin-top: 0;
+    margin-left: 1rem;
   }
 
-  .edit-module {
-    display: flex;
-    max-height: 5rem;
-    border: orange 1px solid;
-    margin: 0.5rem;
-  }
-
-  .delete-module {
-    display: flex;
-    max-height: 5rem;
-    border: red 1px solid;
-    margin: 0.5rem;
+  .move-button {
+    display: none !important; /* Hide arrow buttons on desktop */
   }
 }
