@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timeline Creator</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="page-header">
+        <h1>Interactive Timeline Builder</h1>
+      </div>
+    </header>
+    <div class="grid-container">
+      <div class="main-content">
+        <h2>Add a Module or Select a Module to Edit</h2>
+        <div class="timeline-container">
+          <div class="module-adder">
+            <h1 class="plus">+</h1>
+            <h3 class="add-module-instruction">Click to Add a Module!</h3>
+            <form id="module-form">
+              <input
+                type="text"
+                id="name"
+                class="hidden"
+                name="name"
+                maxlength="35"
+                placeholder="Name It!"
+                required
+              />
+              <input
+                type="text"
+                id="description_1"
+                class="hidden"
+                name="description_1"
+                maxlength="235"
+                placeholder="Describe It!"
+                required
+              />
+              <input
+                type="text"
+                id="date_range"
+                class="hidden"
+                name="date_range"
+                maxlength="100"
+                placeholder="Date It!"
+                required
+              />
+              <button
+                type="submit"
+                id="add-module-button"
+                class="hidden"
+                value="submit"
+              >
+                Create Timeline Module!
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="selected-module-container">
+          <div class="selected-module">
+            <h3>Name of Module</h3>
+            <h4>Description of Module</h4>
+            <h5>Date Range of Module</h5>
+          </div>
+          <div class="functions-wrapper">
+            <div
+              id="move-backward-btn"
+              class="move-button"
+              title="Move Left/Up"
+            >
+              🔼
+            </div>
+            <div
+              id="move-forward-btn"
+              class="move-button"
+              title="Move Right/Down"
+            >
+              🔽
+            </div>
+
+            <div class="edit-module">
+              <img src="/assets/edit-icon.jpg" />
+            </div>
+            <div class="delete-module">
+              <img src="/assets/delete-icon.jpg" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="reset-timeline">
+          <h3>Reset Timeline</h3>
+        </div>
+      </div>
+    </div>
+    <div id="confirmation-modal" class="modal-overlay">
+      <div class="modal-content">
+        <p>
+          Are you sure you want to reset the entire timeline? This cannot be
+          undone.
+        </p>
+        <div class="modal-buttons">
+          <button id="yes-button" class="btn">Yes</button>
+          <button id="no-button" class="btn">No</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
